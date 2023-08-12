@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Suwon from "./Suwon";
+import Seongnam from "./Seongnam";
+import Seoul from "./Seoul";
+import Gwangju from "./Gwangju";
+import Jeju from "./Jeju";
+import MainPage from "./MainPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/suwon" element={<Suwon />} />
+        <Route path="/seongnam" element={<Seongnam />} />
+        <Route path="/seoul" element={<Seoul />} />
+        <Route path="/gwangju" element={<Gwangju />} />
+        <Route path="/jeju" element={<Jeju />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
